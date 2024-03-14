@@ -1,0 +1,24 @@
+
+To pull human or mouse reference genome (from Ensembl), run:
+
+./pullRef_human.sh
+
+Or
+
+./pullRef_mouse.sh
+
+
+If using STAR the first time, please index the reference genome by running:
+
+./buildIndex.sh 
+
+OR with the following command:
+
+STAR --runThreadN 16 \ # number of threads
+     --runMode genomeGenerate \ 
+     --genomeDir genome \ # replace with actual directory
+     --genomeFastaFiles genomic.fa\ # genome fasta file
+     --sjdbGTFfile genomic.gtf \ # in the .gtf/.gff3 format
+     --sjdbOverhang 100 # ideally max read length-1; default 100
+
+Note that building the genome index could take a long time. The scripts are compatible with CRC job submission through `qsub buildIndex.sh`. Please fill in your email address in the script header to receive notifications about job status.
