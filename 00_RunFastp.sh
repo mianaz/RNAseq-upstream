@@ -32,6 +32,9 @@ for g in Input_files/*_R1*; do    #######IF YOUR READS ARE *R1*, please change t
           --out2 $od/fastp/$sample\_2.clean.fq  \
           --unpaired1 $od/fastp/$sample.unpaired.fq  \
           --unpaired2 $od/fastp/$sample.unpaired.fq  \ 
+          --json $od/fastp/$sample.fastp.json  \
+          --html $od/fastp/$sample.fastp.html  \
+          --thread 16
 done
 
 echo "Done QC and trimming with Fastp!"
