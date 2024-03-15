@@ -4,8 +4,7 @@ Workflow to generate count table from paired-read RNA-seq.
 ## Prerequisites
 The main workflow uses the following software/packages\: \
 1. QC, adapter and quality trimming - Fastp \
-2. Alignment - STAR \
-3. Count generation - HTSeq-count 
+2. Alignment and Count - STAR \
 
 It's recommended to install the softwares with conda\: \
 1. Create conda environment\: `conda create -n rna-seq` \
@@ -16,4 +15,4 @@ It's recommended to install the softwares with conda\: \
 `conda config --set channel_priority strict` \
 For Apple Silicon Mac, `conda config --add subdirs osx-64` \
 3. Install packages\: \
-`conda install -n rna-seq -c bioconda star fastp htseq` 
+`conda install -n rna-seq -c bioconda star fastp` 

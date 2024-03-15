@@ -10,6 +10,7 @@ conda activate rna-seq
 # output directory
 od=.
 ref=./Ref/GRCm39/index # replace with your reference genome directory
+gtf=./Ref/GRCm39_ens.gtf # replace with your gtf file
 
 if [ -d $od/STAR ]; then
     echo "directory exists"
@@ -27,10 +28,10 @@ for g in $od/fastp/*.fq; do
     STAR --runThreadN 16 \
         --readFilesIn $i1 $i2 \
         --genomeDir $ref \
-        --outSAMtype BAM SortedByCoordinate\
+        --outSAMtype BAM Unsorted SortedByCoordinate\
         --outFileNamePrefix $od/STAR/$sample. \
-        --outSAMunmapped Within
+        --outSAMunmapped Within  \
+        --quantMode GeneCounts  \
+        --sjdbGTFfile $gtf
 
-    #resort for HTseq-count
-    samtools sort $od/STAR/$sample.Aligned.sortedByCoord.out.bam > $od/STAR/$sample.sort.bam
 done
