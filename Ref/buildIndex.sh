@@ -5,7 +5,7 @@
 #$ -q long
 #$ -N star-build
 
-conda activate ngs
+#conda activate ngs
 
 echo "Building genome index with STAR..."
 
@@ -15,8 +15,8 @@ echo "Building genome index with STAR..."
 #     --runMode genomeGenerate \
 #     --genomeDir GRCh38/index \
 #     --genomeFastaFiles GRCh38/GRCh38_genomic.fa \
-#     --sjdbGTFfile GRCh38/GRCh38_ens.gtf \
-#     --sjdbOverhang 100 
+#     --sjdbGTFfile GRCh38/GRCh38_ens.gtf \ # use basic annotation
+#     --sjdbOverhang 149 # this should be read length-1
 
 #mouse
 mkdir GRCm39/index
@@ -25,6 +25,6 @@ STAR --runThreadN 16 \
      --genomeDir GRCm39/index \
      --genomeFastaFiles GRCm39/GRCm39_genomic.fa \
      --sjdbGTFfile GRCm39/GRCm39_ens.gtf \
-     --sjdbOverhang 100
+     --sjdbOverhang 149
 
 echo "Done building genome index with STAR!"
