@@ -1,7 +1,7 @@
 # data directory
-data_dir=/Users/miana/Desktop/nepc_rnaseq/STAR_out
-output_dir=/Users/miana/Desktop/nepc_rnaseq/qc
-ANTHROPIC_TOKEN=
+data_dir=../STAR_out
+output_dir=../qc
+ANTHROPIC_TOKEN=""
 for g in $data_dir/*.Aligned.sortedByCoord.out.bam; do 
     o=${g#$data_dir/}
     sample=${o%.Aligned.sortedByCoord.out.bam}
