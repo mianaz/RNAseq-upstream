@@ -1,5 +1,5 @@
-data_dir=/Users/miana/Desktop/nepc_rnaseq/raw
-output_dir=/Users/miana/Desktop/nepc_rnaseq/qc
+data_dir=../raw
+output_dir=../qc
 
 if [ -d $output_dir ]; then
     echo "Output directory exists."
