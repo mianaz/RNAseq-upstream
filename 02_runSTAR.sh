@@ -1,7 +1,7 @@
-data_dir=/Users/miana/Desktop/nepc_rnaseq/raw
-output_dir=/Users/miana/Desktop/nepc_rnaseq/STAR_out_custom
-index=/Users/miana/Desktop/ref/others/star_combined_index
-gtf=/Users/miana/Desktop/ref/others/GRCh38_combined.gtf
+data_dir=../raw
+output_dir=../STAR_out
+index=../ref/GRCh38/index
+gtf=/ref/GRCh38/GRCh38.gtf
 
 ulimit -n 2048
 
