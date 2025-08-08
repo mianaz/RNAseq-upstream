@@ -1,7 +1,7 @@
 # data directory
-data_dir=/Users/miana/Desktop/nepc_rnaseq/raw
-output_dir=/Users/miana/Desktop/nepc_rnaseq/salmon_out_custom
-index=/Users/miana/Desktop/ref/others/salmon_combined_index
+data_dir=../raw
+output_dir=../salmon_out
+index=../ref/GRCh38/salmon_index
 
 for g in $data_dir/*_R1_001.fastq.gz; do
     i1=$g
