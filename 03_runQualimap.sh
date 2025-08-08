@@ -1,7 +1,7 @@
 # data directory
-data_dir=/Users/miana/Desktop/nepc_rnaseq/STAR_out
-output_dir=/Users/miana/Desktop/nepc_rnaseq/qc
-gtf=/Users/miana/Desktop/ref/human/gencode.v47.primary_assembly.basic.annotation.gtf
+data_dir=../STAR_out
+output_dir=../qc
+gtf=../ref/GRCh38/GRCh38.gtf
 
 for g in $data_dir/*.Aligned.sortedByCoord.out.bam; do 
     o=${g#$data_dir/}
